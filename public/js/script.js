@@ -8,7 +8,11 @@ async function getCountries() {
   const json = await result.json();
 
   json.forEach((country) => {
-    countries.push([country.name.common, country.flags.png, country.population]);
+    countries.push([
+      country.name.common,
+      country.flags.png,
+      country.population,
+    ]);
   });
 
   update("start");
@@ -27,7 +31,8 @@ function update(mode) {
     while (index1 === index2) {
       index2 = Math.floor(Math.random() * countries.length);
     }
-    document.getElementById("pop").innerHTML = "Population: " + population2.toLocaleString();
+    document.getElementById("pop").innerHTML =
+      "Population: " + population2.toLocaleString();
   }
   document.getElementById("c1").innerHTML = countries[index1][0];
   document.getElementById("f1").src = countries[index1][1];
@@ -39,15 +44,8 @@ async function check(id) {
   const country1 = document.getElementById("c1").innerHTML;
   const country2 = document.getElementById("c2").innerHTML;
 
-  const result = await fetch("https://restcountries.com/v3.1/name/" + country1);
-  const json = await result.json();
-  const population1 = json[0].population;
-
-  const result2 = await fetch(
-    "https://restcountries.com/v3.1/name/" + country2
-  );
-  const json2 = await result2.json();
-  population2 = json2[0].population;
+  population1 = countries[index1][2];
+  population2 = countries[index2][2];
 
   if (id === "c1") {
     if (population1 > population2) {
@@ -67,11 +65,24 @@ async function check(id) {
 }
 
 function addScore() {
-  document.getElementById("score").innerHTML = Number(document.getElementById("score").innerHTML) + 1;
+  document.getElementById("score").innerHTML =
+    Number(document.getElementById("score").innerHTML) + 1;
 }
 
 function decreaseHealth() {
-  document.getElementById("lives").innerHTML = Number(document.getElementById("lives").innerHTML) - 1;
+  document.getElementById("lives").innerHTML =
+    Number(document.getElementById("lives").innerHTML) - 1;
+
+  if (Number(document.getElementById("lives").innerHTML) === 0) {
+    alert("Game Over");
+    window.location.reload();
+  } else {
+    const overlay = document.getElementById("overlay");
+    overlay.style.display = "block";
+    setTimeout(() => {
+      overlay.style.display = "none";
+    }, 100);
+  } 
 }
 
 async function main() {
