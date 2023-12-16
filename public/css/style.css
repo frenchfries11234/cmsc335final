@@ -1,0 +1,12 @@
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+
+    align-items: center;
+}
+
+img {
+    height: 80%;
+    border: 1px solid black;
+}
