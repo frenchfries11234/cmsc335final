@@ -1,4 +1,5 @@
 Country Game: Which Country has a higher population?
+Link to game: https://country-game-ztqe.onrender.com/
 
 Team Members
  - Albert Chen (achen352)
@@ -14,3 +15,4 @@ API links
 https://restcountries.com/#rest-countries
 
 YouTube Demo Video
+https://www.youtube.com/watch?v=4Z0peAewTSY
