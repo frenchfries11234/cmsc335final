@@ -32,7 +32,7 @@ app.listen(PORT, (err) => {
     console.log("Starting server failed.");
   } else {
     console.log(
-      `Web server started and running at: http://localhost:${portNumber}`
+      `Web server started and running at: http://localhost:${PORT}`
     );
   }
 });
