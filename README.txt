@@ -2,6 +2,8 @@ Country Game: Which Country has a higher population?
 
 Team Members
  - Albert Chen (achen352)
+ - Justin Wang (jwang517)
+ - Austin Sankanung (acsan)
 
 App Description
 The app is a game where you try to guess which country has a higher population.

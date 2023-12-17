@@ -65,8 +65,9 @@ async function check(id) {
 }
 
 function addScore() {
-  document.getElementById("score").innerHTML =
-    Number(document.getElementById("score").innerHTML) + 1;
+  document.getElementById("score").value = Number(document.getElementById("score").value) + 1;
+  // document.getElementById("score").innerHTML =
+  //   Number(document.getElementById("score").innerHTML) + 1;
 }
 
 function decreaseHealth() {
@@ -74,8 +75,10 @@ function decreaseHealth() {
     Number(document.getElementById("lives").innerHTML) - 1;
 
   if (Number(document.getElementById("lives").innerHTML) === 0) {
-    alert("Game Over");
-    window.location.reload();
+    document.getElementById("submit").click();
+    // alert("Game Over");
+    
+    // window.location.href = "name";
   } else {
     const overlay = document.getElementById("overlay");
     overlay.style.display = "block";
