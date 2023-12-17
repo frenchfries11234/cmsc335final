@@ -157,7 +157,7 @@ async function get_table(client, id) {
   if(topFive[topFive.length-1].score < score){
     message = "Congrats you made it to the top leaderboard!";
   } 
-  else if(topFive[topFive.length-1].score == score && topFive[topFive.length - 1].name == recent.name && topFive[topFive.length - 1].score == recent.score){
+  else if(topFive[topFive.length-1].score == score && topFilove[topFive.length - 1].name == recent.name && topFive[topFive.length - 1].score == recent.score){
     message = "You barely made it!";
   } 
   else {
